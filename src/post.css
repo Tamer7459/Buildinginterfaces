@@ -1,0 +1,13 @@
+.Post{
+    padding: 10px;
+    border: solid teal 5px;
+    margin: 25px;
+}
+
+h2{
+    padding-bottom: 10px;
+}
+
+p{
+    padding-top: 10px;
+}
