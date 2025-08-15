@@ -1,53 +1,64 @@
-import './App.css';
-import Header from "./Header";
-import Post from "./post";
-import SideMenu from './SideMenu';
 
+import "./App.css";
+
+import Header from "./Header";
+import Post from "./Post";
+import SideMenu from "./SideMenu";
 
 function App() {
+  const posts = [
+    {
+      id: 1,
+      postName: "أكاديمية تامر",
+      postBody: "أكاديمية مخصصة لتعليم البرمجة",
+    },
+
+    {
+      id: 2,
+      postName: "Hello",
+      postBody: "This is the second body",
+    },
+
+    {
+      id: 3,
+      postName: "the third post",
+      postBody: "This is the third body",
+    },
+    {
+      id: 4,
+      postName: "the fourth post",
+      postBody: "This is the fourth body",
+    },
+    {
+      id: 5,
+      postName: "the fifth post",
+      postBody: "This is the fifth body",
+    },
+  ];
+
+  const postsList = posts.map((post) => {
+    return <Post key={post.id} postName={post.postName} />;
+  });
   return (
     <div className="App">
-      <Header/>
+      <Header />
 
-      <div style={{display: "flex", justifyContent: "center",}}>
+      {/* POSTS CONTAINER */}
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{ width: "60%", display: "flex", justifyContent: "center" }}
+        >
+          {/* == POSTS CONTAINER == */}
+          <div style={{ width: "70%" }}>{postsList}</div>
 
-        {/* post & side menu container */}
-        <div style={{display: "flex", width: "60%"}}>
-          {/* post container */}
-          <div style={{width: "70%"}}>
-            <Post>
-              <h1>20</h1>
-              <h2>اكادمية ثامر</h2>
-              <hr/>
-              <p>اكادمية مختصة لتعليم البرمجة بمختلف الغات وتقنياتها</p>
-            </Post>
-            <Post> 
-              <h1>hello world</h1>
-              <hr/>
-              <p>this is the hello world article</p>
-            </Post> 
-            <Post>  
-              <h1>Post 3</h1>
-              <hr/>
-              <p>This is the body of post </p>
-            </Post>
-
+          <div style={{ width: "30%", marginTop: "25px" }}>
+            <SideMenu />
           </div>
-          {/***  post container ***/}
-          {/* side menu container */}
-          <div style={{width: "30%"}}>
-            <SideMenu>
-              <button>جديدة</button>
-              <button>الاكثر قرائة</button>
-              <button>مقالات مميزة</button>
-            </SideMenu>
-          </div>
-          {/*** side menu container ***/}
         </div>
-        {/***  post & side menu container ***/ }
       </div>
+
     </div>
   );
-} 
+}
 
 export default App;
