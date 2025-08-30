@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build" 
   },
-  "homepage": "https://tamer7459.github.io/Building-interfaces-and-components/",
+  "homepage": "https://tamer7459.github.io/Building-interfaces-and-components",
   "eslintConfig": {
     "extends": [
       "react-app",
