@@ -32,11 +32,7 @@ export default function LoanForm() {
             setErrorMessage("You must be at least 18 years old.");
         } else if (formData.age > 100) {
             setErrorMessage("You must be less than 100 years old.");
-        }else{
-            setErrorMessage(null);
-        }
-
-        if (formData.phone.length !== 10) {
+        }else if (formData.phone.length !== 10) {
             setErrorMessage("Phone number must be exactly 10 digits long.");
         }else{
             setErrorMessage(null);
